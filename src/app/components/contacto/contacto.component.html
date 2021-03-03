@@ -1,0 +1,61 @@
+<h1 class="display-5" style="color: #473144; padding: 10px;">{{titulo}}</h1>
+
+<div class="container" style="padding: 10px;">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Correo Electrónico</label
+    >
+    <input
+      type="email"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="name@example.com"
+      [(ngModel)]="email"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Tus comentarios</label
+    >
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="10"
+      placeholder="Cuéntanos..."
+      [(ngModel)]="mensaje"
+    ></textarea>
+  </div>
+  <div class="mb-3">
+    <button
+      type="button"
+      class="btn btn-outline-success"
+      (click)="guardarMensaje(email, mensaje)"
+    >
+      Enviar comentarios
+    </button>
+  </div>
+</div>
+
+<br />
+<br />
+
+<div class="container" style="padding: 10px;">
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead style="color: #13505b; font-size: 20px;">
+        <tr>
+          <th>Correo elecronico</th>
+          <th>Mensaje</th>
+        </tr>
+      </thead>
+      <tbody style="color: #1d7787; font-size: 18px;">
+        <ng-container *ngFor="let mensaje of mensajes">
+          <tr>
+            <td>{{mensaje.email}}</td>
+            <td>{{mensaje.mensaje}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

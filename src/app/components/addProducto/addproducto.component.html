@@ -1,0 +1,44 @@
+<h6 class="display-6" style="color: #473144; padding: 10px;">
+  Agregar Producto
+</h6>
+<br />
+<br />
+<div class="container">
+  <form (ngSubmit)="agregar()">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Nombre"
+      name="nombre"
+      [(ngModel)]="producto.nombre"
+    /><br />
+
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Marca"
+      aria-describedby="basic-addon1"
+      name="marca"
+      [(ngModel)]="producto.marca"
+    /><br />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Precio"
+      name="precio"
+      [(ngModel)]="producto.precio"
+    />
+    <br />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="URL imagen"
+      name="url"
+      [(ngModel)]="producto.imgUrl"
+    />
+    <br />
+    <button type="submit" class="btn btn-outline-primary">
+      Guardar
+    </button>
+  </form>
+</div>
